@@ -164,7 +164,7 @@ output from console:
             "node_type": "LPNodeType.Invoke",
             "model": null,
             "local_vars": {
-                "__api_key": "sk-dfe1faa312014629a94a29bd6783e46f",
+                "__api_key": "sk-***",
                 "__api_url": "https://api.bochaai.com/v1/web-search",
                 "__search_keywords": "\n小米汽车高速撞车重大事故的详细经过是怎样的？\n",
                 "__search_count": 10,
