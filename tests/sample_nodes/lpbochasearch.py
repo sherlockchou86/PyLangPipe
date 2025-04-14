@@ -70,7 +70,7 @@ class LPBoChaSearch(LPBaseInvoker):
                 formatted_results = ""
                 for idx, page in enumerate(webpages, start=1):
                     formatted_results += (
-                        f"引用: {idx}\n"
+                        f"[[引用: {idx}]]\n"
                         f"标题: {page['name']}\n"
                         f"URL: {page['url']}\n"
                         f"摘要: {page['summary']}\n"

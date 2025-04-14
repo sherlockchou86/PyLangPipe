@@ -55,7 +55,7 @@ class LPKBSearch(LPBaseInvoker):
         count = 1
         for idx, row in enumerate(rows, start=1):
             search_result += (
-                f"引用：{idx}\n"
+                f"[[引用：{idx}]]\n"
                 f"出自：{row[1]}\n"
                 f"原文：{row[0]}\n"
                 f"相关性：{D[0][idx-1]}\n\n"

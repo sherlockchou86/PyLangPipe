@@ -4,6 +4,7 @@ from .lpend import LPEnd
 from .lpclassifier import LPClassifier
 from .lpextractor import LPExtractor
 from .lpaggregator import LPAggregator
+from .lpsuperaggregator import LPSuperAggregator
 from .lpgenerator import LPGenerator
 from .lpchatter import LPChatter
 from .lpbaseinvoker import LPBaseInvoker
