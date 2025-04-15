@@ -79,6 +79,7 @@ class LPSuperAggregator(LPNode):
         # update local vars
         record = lpdata['records'][-1]
         record['local_vars']['__aggregate_desc'] = self.__aggregate_desc
+        record['local_vars']['__to_html'] = self.__to_html
 
         # update global variables
         if self.__to_html:
