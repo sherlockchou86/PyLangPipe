@@ -25,8 +25,8 @@ labels_desc = {
 # create nodes
 begin = langpipe.LPBegin('begin_node')
 classifier = langpipe.LPClassifier('classifier', labels_desc)
-bocha_search = sample_nodes.LPBoChaSearch('bocha_search', 'sk-604b3529ecba4deab76ff3e5b6c98b85') # replace with your own api key
-aggregator = langpipe.LPSuperAggregator('aggregator', None, 'qwen2.5:7b')  # including reference sources
+bocha_search = sample_nodes.LPBoChaSearch('bocha_search', 'sk-***')              # replace with your own api key
+aggregator = langpipe.LPSuperAggregator('aggregator', None, True, 'qwen2.5:7b')  # including reference sources
 end0 = langpipe.LPEnd('end_node_0')  # 正常问题 结束分支
 end1 = langpipe.LPEnd('end_node_1')  # 敏感问题 结束分支
 
@@ -37,7 +37,7 @@ bocha_search.link(aggregator)
 aggregator.link([end0])
 
 # input what you want to
-begin.input(query3, None, False)
+begin.input(query5, None, False)
 
 # visualize the pipeline with data flow
 print('-----board for debug purpose-----')

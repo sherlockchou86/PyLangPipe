@@ -1,4 +1,5 @@
 import json
+import re
 from ollama import generate
 from .lpnode import LPNode, LPNodeType
 
@@ -6,10 +7,13 @@ class LPSuperAggregator(LPNode):
     """
     data aggregation using LLM based on Ollama, which able to list reference sources from context.
     access `lpdata['global_vars']['aggregated_data']` for the aggregated data with json format.
+
+    NOTE: this node is also able to convert aggregated data into html format with reference links clickable, which can be used to render the data into a web page directly.
     """
-    def __init__(self, name, aggregate_desc=None, model='minicpm-v:8b') -> None:
+    def __init__(self, name, aggregate_desc=None, to_html=False, model='minicpm-v:8b') -> None:
         super().__init__(name, LPNodeType.LLM, model)
         self.__aggregate_desc = aggregate_desc
+        self.__to_html = to_html
         self.__aggregated_data = None
         self.__aggregate_prompt_template = """
         你是一个强大的智能信息聚合助手（Aggregator），擅长根据上下文信息，结合自己的理解、生成有引用标注的回答。
@@ -77,5 +81,25 @@ class LPSuperAggregator(LPNode):
         record['local_vars']['__aggregate_desc'] = self.__aggregate_desc
 
         # update global variables
+        if self.__to_html:
+            self.__aggregated_data = self.__convert_html()   # convert to html with reference links clickable 
         lpdata['final_out'] = self.__aggregated_data
         lpdata['global_vars']['aggregated_data'] = json.loads(self.__aggregated_data)
+    
+    def __convert_html(self) -> str:
+        data = json.loads(self.__aggregated_data)
+        content = data["content"]
+        links = data["references"]
+
+        def replace(match):
+            num = int(match.group(1))
+            index = num - 1
+            if 0 <= index < len(links):
+                url = links[index]
+                return f'<a href="{url}" target="_blank">[{num}]</a>'
+            else:
+                return match.group(0)
+
+        html_content = re.sub(r'\[(\d+)\]', replace, content)
+        data['content'] = html_content
+        return json.dumps(data, indent=4, ensure_ascii=False)
