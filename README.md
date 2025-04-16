@@ -10,10 +10,20 @@ a simple lightweight large language model pipeline framework. which is easy to u
 
 ## prepare environment
 
+> tested on Ubuntu 18.04/20.04/22.04 with 4*RTX 4080 GPUs.
+
 1. install Ollama from https://ollama.ai/download
+```
+# pull LLMs used by test scripts in tests/
+ollama pull minicpm-v:8b  # support text & image input
+ollama pull qwen2.5:7b    # support text only
+other LLMs you want to use...
+```
 
 2. install pylangpipe
 ```
+git clone https://github.com/sherlockchou86/PyLangPipe.git
+cd PyLangPipe
 conda create -n pylangpipe python=3.12
 conda activate pylangpipe
 pip install -r requirements.txt
@@ -36,6 +46,7 @@ python 11-sql_rag.py
 python 12-vector_rag.py
 ...
 ```
+[more samples](./tests/) in `./tests/`
 
 ## quick start
 ```python
