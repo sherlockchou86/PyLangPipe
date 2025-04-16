@@ -15,8 +15,10 @@ class LPGenerator(LPNode):
     
     def _handle(self, lpdata) -> None:
         query = lpdata['query']
+        query_imgs = lpdata['query_imgs']
         response = generate(model=self.model, 
                             prompt=query,
+                            images=query_imgs,
                             options={
                                 'top_k': 100,
                                 'temperature': 0.8
