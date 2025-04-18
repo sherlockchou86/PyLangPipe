@@ -1,8 +1,9 @@
 # PyLangPipe
 
 <p style="" align="center">
-  <img src="./docs/tests/rag_search_engine_ref.png" alt="LangPipe" style="border: 2px solid black; border-radius: 6px;">
+  <img src="./docs/tests/rag_search_engine_ref.png" alt="LangPipe">
 </p>
+
 a simple lightweight large language model pipeline framework. which is easy to use and extend for several tasks.
 - text generation  
 - chat  with LLM
