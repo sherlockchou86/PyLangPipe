@@ -14,14 +14,14 @@ labels_desc = """
 json.loads(labels_desc)
 
 # create nodes
-begin = langpipe.LPBegin('begin_node')
+begin = langpipe.LPBegin('begin')
 classifier = langpipe.LPClassifier('classifier', json.loads(labels_desc))
-end0 = langpipe.LPEnd('end_node0')     # 1st label
-end1 = langpipe.LPEnd('end_node1')     # 2nd label
-end2 = langpipe.LPEnd('end_node2')     # 3rd label
-end3 = langpipe.LPEnd('end_node3')     # 4th label
-end4 = langpipe.LPEnd('end_node4')     # 5th label
-end10 = langpipe.LPEnd('end_node10')   # classification fails
+end0 = langpipe.LPEnd('end0')     # 1st label
+end1 = langpipe.LPEnd('end1')     # 2nd label
+end2 = langpipe.LPEnd('end2')     # 3rd label
+end3 = langpipe.LPEnd('end3')     # 4th label
+end4 = langpipe.LPEnd('end4')     # 5th label
+end10 = langpipe.LPEnd('end10')   # classification fails
 
 # link together
 begin.link([classifier])
@@ -33,5 +33,5 @@ begin.input("这次比赛，日本代表团获得了三金四银的好成绩", N
 
 # visualize the pipeline with data flow
 print('-----board for debug purpose-----')
-renderer = langpipe.LPBoardRender(node_size=100)
+renderer = langpipe.LPBoardRender(node_size=80, v_spacing=50)
 renderer.render(begin)

@@ -99,7 +99,7 @@ class LPBoardRender:
             self.__img = np.ones((img_height, img_width, 3), dtype=np.uint8) * 255
             self.__draw_node(root, root_x, root_y)
             self.__draw_info()
-            cv2.imshow("Tree", self.__img)
+            cv2.imshow("LangPipe", self.__img)
             if cv2.waitKey(100) & 0xFF == 27:
                 break
 

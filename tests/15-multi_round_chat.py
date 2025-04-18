@@ -15,9 +15,9 @@ class ChatPipeline:
         self.__begin = langpipe.LPBegin('begin_node')
         classifier = langpipe.LPClassifier('classifier', {'正常问题':'非敏感问题，都归属于正常问题', '非正常问题':'一切涉及政治、色情、歧视、暴恐等违法内容的问题'}, 'qwen2.5:7b')
         chatter = langpipe.LPChatter('chatter', 'qwen2.5:7b')
-        end_legal = langpipe.LPEnd('end_legal', callback=self.__output_handler, debug=True, print_final_out=False, remove_thinking_txt=False)
-        end_illegal = langpipe.LPEnd('end_illegal', callback=self.__output_handler, debug=True, print_final_out=False, remove_thinking_txt=False)
-        end_failed = langpipe.LPEnd('end_failed', callback=self.__output_handler, debug=True, print_final_out=False, remove_thinking_txt=False)
+        end_legal = langpipe.LPEnd('end_legal', callback=self.__output_handler, debug=False, print_final_out=False, remove_thinking_txt=False)
+        end_illegal = langpipe.LPEnd('end_illegal', callback=self.__output_handler, debug=False, print_final_out=False, remove_thinking_txt=False)
+        end_failed = langpipe.LPEnd('end_failed', callback=self.__output_handler, debug=False, print_final_out=False, remove_thinking_txt=False)
 
         # link together
         self.__begin.link(classifier)
