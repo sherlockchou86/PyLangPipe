@@ -148,6 +148,7 @@ display pipeline on gui and print it at console.
 ## 06-images_input_test
 input images to pipeline.
 
+![](../docs/tests/images_input.png)
 ```
 python 06-images_input_test.py 
 output from handler:
