@@ -423,6 +423,12 @@ chat to web using LangPipe from browser.
 
 ![](../docs/tests/chat_to_web_gui.png)
 
+
+## 21-chat_to_sqlite_gui
+chat to sqlite using LangPipe from browser.
+
+![](../docs/tests/chat_to_sqlite_gui.png)
+
 ## fake_faiss_index
 fake script to create a vector index & meta db files.
 
