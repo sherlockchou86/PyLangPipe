@@ -418,6 +418,11 @@ VideoPipe不仅能够支持上述核心功能，还具备以下特点：
 >>>exit  // exit session
 ```
 
+## 20-chat_to_web_gui
+chat to web using LangPipe from browser.
+
+![](../docs/tests/chat_to_web_gui.png)
+
 ## fake_faiss_index
 fake script to create a vector index & meta db files.
 
