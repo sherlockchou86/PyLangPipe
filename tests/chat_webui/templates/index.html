@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>与LangPipe对话</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">与LangPipe对话</div>
+    <div class="chat-messages" id="chatMessages"></div>
+
+    <div class="search-toggle">
+        <label>
+          <input type="checkbox" id="searchCheckbox" />
+          联网搜索
+        </label>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="输入消息..." onkeydown="if(event.key==='Enter') sendMessage()"/>
+      <button onclick="sendMessage()">发送</button>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>

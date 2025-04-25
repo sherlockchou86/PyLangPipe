@@ -13,6 +13,10 @@ a simple lightweight large language model pipeline framework. which is easy to u
 - RAG based on SQL (database)
 - RAG based on Vector (knowledge base)
 
+**chat to LLMs/Web using LangPipe**:
+
+![](./docs/tests/chat_webui.png)
+
 ## prepare environment
 
 > tested on Ubuntu 18.04/20.04/22.04 with 4*RTX 4080 GPUs.

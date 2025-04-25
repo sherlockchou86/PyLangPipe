@@ -1,0 +1,126 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .chat-container {
+    width: 400px;
+    max-height: 90vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .chat-header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    margin-bottom: 12px;
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  }
+  
+  .message .nickname {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #555;
+  }
+  
+  .message .text {
+    padding: 6px 0;
+    white-space: pre-wrap;
+  }
+  
+  .message .time {
+    font-size: 11px;
+    color: #888;
+    margin-top: 4px;
+  }
+  
+  .user {
+    align-self: flex-end;
+    background-color: #d2f8d2;
+    border-top-right-radius: 0;
+    text-align: left;
+  }
+  
+  .user .time {
+    align-self: flex-end;
+  }
+  
+  .bot {
+    align-self: flex-start;
+    background-color: #f1f0f0;
+    border-top-left-radius: 0;
+    text-align: left;
+  }
+  
+  .bot .time {
+    align-self: flex-start;
+  }
+  
+  .chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .chat-input button {
+    padding: 12px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .chat-input button:hover {
+    background-color: #357ab8;
+  }
+
+  .search-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0 0 0;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  
